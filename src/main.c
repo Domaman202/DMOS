@@ -42,8 +42,12 @@ uint8_t *video_buff = (uint8_t*)0xB8000;
  */
 noreturn
 void kernel_main(uint32_t eax, uint32_t ebx, uint32_t esp) {
-    video_buff[0] = '1';    // Выводим символ 1
+    video_buff[0] = 'H';    // Выводим символ H
     video_buff[1] = 0x0F;   // Фон(0x0) - черный, текст(0xF) - белый
+    video_buff[2] = 'i';    // Выводим символ i
+    video_buff[3] = 0x0F;   // Фон(0x0) - черный, текст(0xF) - белый
+    video_buff[4] = '!';    // Выводим символ !
+    video_buff[5] = 0x0F;   // Фон(0x0) - черный, текст(0xF) - белый
 
     // Не даём процессору перегреться
     for (;;) {
